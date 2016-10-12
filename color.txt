@@ -1,0 +1,32 @@
+HEX Color Sheet
+
+Navigation bar {
+hover on categories : #faa21b
+
+Font Color For Nav Text : #000
+
+
+}
+
+Navigation Bar ON Scroll {
+Navbar background : rgba(0,0,0,.8)
+
+hover on categories :  #faa21b
+
+Font Color : #000
+
+Search Icon : #fff
+}
+
+Body {
+Author Name: #faa21b
+Dates : #999
+Titles: #333
+Submit Btns: #FAA11B
+}
+
+Footer{
+Background: #333
+Font-Color: #aaa
+
+}
