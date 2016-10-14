@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<!--[if lte IE 7]><html class="ie7"><![endif]-->
+<!--[if IE 8]><html class="ie8"><![endif]-->
+<!--[if IE 9]><html class="ie9"><![endif]-->
+<!--[if !IE]><!--><html><!--<![endif]-->
+<head>
+{{! Document Settings }}
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+{{! Page Meta }}
+<title>{{meta_title}} {{log meta_title}}</title>
+<meta name="description" content="{{meta_description}}" />
+
+{{! Mobile Support }}
+<meta name="HandheldFriendly" content="True" />
+<meta name="MobileOptimized" content="320" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+{{! Styles'n'Scripts }}
+<link href='https://fonts.googleapis.com/css?family=Playfair+Display' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
+<link rel="icon" href="{{asset "images/favicon.ico"}}">
+<link rel="stylesheet" type="text/css" href="{{asset "css/animate.min.css"}}">
+<!-- <link rel="stylesheet" type="text/css" href="{{asset "css/grids.css"}}"> -->
+<link rel="stylesheet" type="text/css" href="{{asset "css/bootstrap.min.css"}}">
+<link rel="stylesheet" type="text/css" href="{{asset "css/owl.carousel.css"}}">
+<link rel="stylesheet" type="text/css" href="{{asset "css/owl.theme.css"}}">
+<link rel="stylesheet" type="text/css" href="{{asset "css/font-awesome.min.css"}}">
+<link rel="stylesheet" type="text/css" href="{{asset "css/common-elements.css"}}">
+<link rel="stylesheet" type="text/css" href="{{asset "css/style.css"}}">
+<link rel="stylesheet" type="text/css" href="{{asset "css/responsive.css"}}">
+<link rel="stylesheet" type="text/css" href="{{asset "css/prettify-bootstrap.css"}}">
+<link rel="stylesheet" type="text/css" href="{{asset "css/jquery.magnific-popup.css"}}">
+<link rel="stylesheet" type="text/css" href="{{asset "js/tooltipster/css/tooltipster.css"}}">
+<link rel="stylesheet" type="text/css" href="{{asset "js/tooltipster/css/themes/tooltipster-small.css"}}">
+<link rel="stylesheet" type="text/css" href="{{asset "js/slick/slick.css"}}">
+<link rel="stylesheet" type="text/css" href="{{asset "js/slick/slick-theme.css"}}">
+<link rel="stylesheet" type="text/css" href="{{asset "css/main-color.css"}}">
+<!--[if lt IE 9]>
+<link rel="stylesheet" type="text/css" href="{{asset "css/grids-ie.css"}}">
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+
+{{ghost_head}}
+
+<script type="text/javascript">
+if (typeof jQuery == 'undefined') {
+  document.write('<script type="text/javascript" src="{{asset "js/jquery-1.11.3.min.js"}}"></'+'script>');
+}
+</script>
+<script type="text/javascript" src="{{asset "js/global.js"}}"></script>
+
+<script type="text/javascript" src="{{@blog.url}}/config.js"></script>
+<script src="https://use.fontawesome.com/568e40764f.js"></script>
+<script type="text/javascript" src="//delivery.thebloggernetwork.com/3cf7ecf9-e410-42e7-a669-b8a304357f66.js"></script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-78440791-2', 'auto');
+  ga('send', 'pageview');
+</script>
+
+</head>
+
+<body class="enable_animations  {{#if @blog.cover}}cover{{/if}} {{body_class}}" {{#if @blog.cover}}style="background: url({{@blog.cover}}) no-repeat center center fixed;"{{/if}} style="overflow:hidden;">
+<div class="container">
+	<div class="row">
+		{{> header}}
+    <div class="searchbar">
+			<form class="" action="/search" method="get">
+				<input type="text" name="q" value="{{query}}" placeholder="Search"style="background-color:#222;color:#fff" >
+			</form>
+		</div>
+	</div>
+</div>
+<div class="clear">
+</div>
+			<section>
+        				{{{body}}}
+		 </section>
+		 <div class="clear">
+		 </div>
+		<div class="container-fluid">
+			<div class="row">
+				{{> footer}}
+			</div>
+		</div>
+    <!-- end: #wrapper -->
+    {{ghost_foot}}
+
+
+    <script type='text/javascript'>
+    var googletag = googletag || {};
+    googletag.cmd = googletag.cmd || [];
+    (function() {
+    var gads = document.createElement('script');
+    gads.async = true;
+    gads.type = 'text/javascript';
+    var useSSL = 'https:' == document.location.protocol;
+    gads.src = (useSSL ? 'https:' : 'http:') +
+    '//www.googletagservices.com/tag/js/gpt.js';
+    var node = document.getElementsByTagName('script')[0];
+    node.parentNode.insertBefore(gads, node);
+    })();
+    </script>
+
+  <div id="fb-root"></div>
+
+    <!-- start: #wrapper -->
+	<script type="text/javascript" src="{{asset "built/jquery-migrate-1.min.js"}}"></script>
+	<script type="text/javascript" src="{{asset "built/moment.min.js"}}"></script>
+	<!--<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>-->
+  <!--<script type="text/javascript" src="{{asset "js/jquery.fitvids.js"}}"></script>-->
+	<script type="text/javascript" src="{{asset "built/jquery_sticky.js"}}"></script>
+	<script type="text/javascript" src="{{asset "js/google-code-prettify/prettify.js"}}"></script>
+	<script type="text/javascript" src="{{asset "built/jquery_placeholder.min.js"}}"></script>
+	<script type="text/javascript" src="{{asset "built/jquery_magnific-popup.min.js"}}"></script>
+	<script type="text/javascript" src="{{asset "built/jflickrfeed.min.js"}}"></script>
+	<script type="text/javascript" src="{{asset "js/tooltipster/jquery.tooltipster.min.js"}}"></script>
+	<!--<script type="text/javascript" src="{{asset "built/jquery_ghostHunter.min.js"}}"></script>-->
+	<script type="text/javascript" src="{{asset "built/jquery_debounce.js"}}"></script>
+	<script type="text/javascript" src="{{asset "built/bootstrap.min.js"}}"></script>
+
+<!--[if !IE]><!-->
+	<script type="text/javascript" src="{{asset "built/wow.min.js"}}"></script>
+	<script type="text/javascript">
+		if($('body').hasClass('enable_animations')){
+			wow = new WOW({ offset: 150 });
+			wow.init();
+		}else{
+			$('.wow').removeClass('wow opacity0');
+		}
+	</script>
+
+  <script>(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.7&appId=1640664716197646";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));</script>
+
+<!--<![endif]-->
+<!--	<script type="text/javascript">
+		/* * * CONFIGURATION VARIABLES * * */
+		var disqus_shortname = theme_config.disqus_shortname;
+
+		/* * * DON'T EDIT BELOW THIS LINE * * */
+		(function () {
+			var s = document.createElement('script'); s.async = true;
+			s.type = 'text/javascript';
+			s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+			(document.getElementsByTagName('BODY')[0]).appendChild(s);
+		}());
+	</script>
+	<script>
+    var max_pages = parseInt('{{pagination.pages}}');
+	</script> -->
+		<!-- Mobile Revcon -->
+
+<!-- Desktop Revcon -->
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-56b06d5aadd2e907"></script>
+</body>
+</html>

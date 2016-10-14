@@ -1,0 +1,130 @@
+{{!< default}}
+
+{{! The comment above "< default" means - insert everything in this file into
+    the {body} of the default.hbs template, which contains our header/footer. }}
+
+<!-- start: #single -->
+<div class="container content-wrap">
+<div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+		<main id="single" class="main " role="main">
+		{{#post}}
+			<!-- start: .meta -->
+			<div class="meta col-lg-12 col-md-12 col-xs-12">
+				<a href="{{url}}" class="local">
+				<h1 class="title" id="post_title" style="font-family:Roboto Condensed;">{{title}}</h1>
+				</a>
+					<div class="row">
+		          {{#if tags}}
+		            <div class="tags">
+		              {{tags separator=""}}
+		            </div>
+		          {{/if}}
+		          <time datetime="{{date format="YYYY-MM-DD"}}"><i class="fa fa-clock-o"></i> {{date}}</time>
+							<div class="fb-like" data-href="https://www.facebook.com/HeartCenteredRebalancing" data-layout="button_count" data-action="like" data-size="small" data-show-faces="true" data-share="false" style="display:inline-block;"></div>
+		      </div>
+		    </div>
+		    <div class="clear">
+		    </div>
+		    {{#if image}}
+		        {{^has tag="no cover"}}
+
+		                <div class="main-image cover">
+											<img src="{{image}}"  style="width:100%" height="400"  alt="" />
+		                    <div class="center grid-container">
+		                        <div class="boxed cover" style="background: url({{image}});"></div>
+		                        <div class="boxed overlay"></div>
+		                    </div>
+		                </div>
+										<!--<div class="addthis_sharing_toolbox "></div>-->
+		        {{/has}}
+		    {{/if}}
+		<div class="clear"></div>
+				<!-- start: .center -->
+				<div class=" content section grid-container {{#has tag="no cover"}}no-cover{{/has}}">
+						<!-- start: .content -->
+
+							<article class="{{post_class}}">
+								{{#has tag="no cover"}}
+									<header>
+										<!-- start: .meta -->
+										<div class="meta">
+											{{#if tags}}
+												<div class="tags">
+													{{tags separator=""}}
+												</div>
+											{{/if}}
+											<time datetime="{{date format="YYYY-MM-DD"}}"><i class="fa fa-clock-o"></i> {{date}}</time>
+											<a href="#comments" class="comments alignright"><i class="fa fa-comment"></i> <span class="disqus-comment-count" data-disqus-url="{{@blog.url}}{{url}}">0</span></a>
+										</div>
+										<!-- end: .meta -->
+										<div class="clear"></div>
+										<h2 class="title">{{title}}</h2>
+										<div class="post-format">
+											{{#if image}}
+												<div class="main-image"><img src="{{image}}"></div>
+											{{/if}}
+										</div>
+									</header>
+								{{/has}}
+								<section class="post-content " style="z-index:999;margin-bottom:50px;">
+									<div class="ad-container col-lg-4 col-md-4 ">
+
+												<script id="mNCC" language="javascript">
+												  medianet_width = "300";
+												  medianet_height = "250";
+												  medianet_crid = "470852744";
+												  medianet_versionId = "111299";
+												  (function() {
+												      var isSSL = 'https:' == document.location.protocol;
+												      var mnSrc = (isSSL ? 'https:' : 'http:') + '//contextual.media.net/nmedianet.js?cid=8CU3XYIRI' + (isSSL ? '&https=1' : '');
+												      document.write('<scr' + 'ipt type="text/javascript" id="mNSC" src="' + mnSrc + '"></scr' + 'ipt>');
+												  })();
+												</script>
+										</div>
+
+											<div class="  post_subscribe_form col-lg-7 col-md-6 col-sm-10 col-xs-12">
+													{{subscribe_form placeholder="Your Email Here"}}
+												</div>
+
+											<!--<div class="row" style="clear:left;"-->
+												<div class="addthis_sharing_toolbox col-lg-4 col-md-6 col-sm-10 col-xs-12 " style="float:right;margin-top:20%;"></div>
+										<!--	</div>-->
+													{{#if error}}
+													    <p class="main-error">{{{error.message}}}</p>
+													{{/if}}
+												<div class=" fade-1">
+											    <div class="text">{{content}}</div>
+														<p class="read-more"><a class="btn" href="#">Read More</a></p>
+										    </div>
+		              </section>
+							</article>
+						<div id="rcjsload_3d3aad"></div>
+
+		      </div>
+		      <div class="clear"></div>
+	    		<div class="clear"></div>
+						<!-- end: .content -->
+		    {{/post}}
+		    {{>sidebar-featured}}
+				<!-- end: .center -->
+</main>
+<!-- end: #single -->
+</div>
+<div class="hidden-xs col-lg-4 col-sm-4 pull-right">
+	<div class="ad-wrapper" id="ad_4">
+		<!--TBN BTF 300x250 pos 2 STARTS-->			<div id="tbn-6824972e-2777-1f3e-137f-a4d58d24a499">
+			     <script type="text/javascript">window.$tbn = window.$tbn || {"d":function(){}}; $tbn.d("6824972e-2777-1f3e-137f-a4d58d24a499");</script>
+			</div>
+		<!--TBN BTF 300x250 pos 2 ENDS-->
+	</div>
+</div>
+<div class="clear"></div>
+	<div class=" col-lg-8 col-md-8 col-sm-8 col-xs-12">
+		<section class="related grid-container grid-parent">
+			<h3 class="title bordered">RELATED POSTS</h3>
+			{{>related_posts}}
+			<div class="loaded_content">
+			</div>
+		</section>
+	</div>
+</div>

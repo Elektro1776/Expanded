@@ -1,0 +1,87 @@
+{{#get "posts"  filter="id:-{{post.id}}" limit=4}}
+{{#foreach posts }}
+
+<!-- start: .meta -->
+<div class="meta">
+  <a href="{{url}}" class="local">
+  <h1 class="title" id="post_title" style="font-family:Playfair Display;">{{title}}</h1>
+  </a>
+  <div class="fb-like" data-href="https://www.facebook.com/HeartCenteredRebalancing" data-layout="button_count" data-action="like" data-size="small" data-show-faces="true" data-share="false"></div>
+      <div class="row">
+              {{#if tags}}
+            <div class="tags">
+                  {{tags separator=""}}
+            </div>
+              {{/if}}
+            <time datetime="{{date format="YYYY-MM-DD"}}"><i class="fa fa-clock-o"></i> {{date}}</time>
+      </div>
+
+
+  {{#if image}}
+      {{^has tag="no cover"}}
+              <div class="main-image cover">
+                <img src="{{image}}"  style="width:100%" height="400"  alt="" />
+                  <div class="center grid-container">
+                      <div class="boxed cover" style="background: url({{image}});"></div>
+                      <div class="boxed overlay"></div>
+                  </div>
+              </div>
+          {{/has}}
+  {{/if}}
+
+    <!-- start: .center -->
+  <div class="center content section grid-container {{#has tag="no cover"}}no-cover{{/has}}">
+
+      <!-- start: .content -->
+
+        <article class="{{post_class}}">
+          {{#has tag="no cover"}}
+            <header>
+                <!-- start: .meta -->
+                <div class="meta" style="margin-top:50px;">
+                  {{#if tags}}
+                    <div class="tags">
+                      {{tags separator=""}}
+                    </div>
+                  {{/if}}
+                  <time datetime="{{date format="YYYY-MM-DD"}}"><i class="fa fa-clock-o"></i> {{date}}</time>
+                </div>
+                <!-- end: .meta -->
+                <div class="clear"></div>
+                <h2 class="title">{{title}}</h2>
+                <div class="post-format">
+                  {{#if image}}
+                    <div class="main-image"><img src="{{image}}"></div>
+                  {{/if}}
+                </div>
+            </header>
+
+          {{/has}}
+          <section class="post-content" style="margin-bottom:50px;">
+            
+            <div class="ad-container col-lg-4 col-xs-12">
+              <!--TBN ATF 300x250 pos 1 STARTS-->
+              	<div id="tbn-c36c04fd-455a-3e7e-b314-7800a9ee86a3">
+              	     <script type="text/javascript">window.$tbn = window.$tbn || {"d":function(){}}; $tbn.d("c36c04fd-455a-3e7e-b314-7800a9ee86a3");</script>
+              	</div>
+              <!--TBN ATF 300x250 pos 1 ENDS-->
+            </div>
+
+            <div class=" post_subscribe_form col-lg-7 col-md-6 col-sm-10">
+                {{subscribe_form placeholder="Your Email Here"}}
+              </div>
+
+                {{#if error}}
+                  <p class="main-error">{{{error.message}}}</p>
+                {{/if}}
+
+              <div class="row fade-out">
+                  <div class="text">{{content}}</div>
+                    <p class="read-more"><a class="btn" href="{{url}}">Read More</a></p>
+              </div>
+            </section>
+        </article>
+      </div>
+  </div>
+  {{/foreach}}
+{{/get}}
