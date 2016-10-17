@@ -63,21 +63,21 @@ section.widget_tag_cloud a,
 
 
 /* Footer styling section */
-#footer{ background: black;}
-#footer div  div > ul > li > a {color:#db2bcc;}
-#footer div #footer-links > li >a {color:#db2bcc}
+#footer{ background: #333;}
+#footer div  div > ul > li > a {color:#aaa;}
+#footer div #footer-links > li >a {color:#aaa}
 /* @end */
 
 /* @group Third Color default: #666 (links rollover, tags rollover, titles, etc)*/
 
-a:hover{ color: #db2bcc; text-decoration: none;}
+a:hover{ color: #faa21b; text-decoration: none;}
 
 /* @end */
 
 /* @group Fourth Color default: #888 (dates and comments)*/
 
 article time, div.meta time,
-div.meta a.comments{ color: #888; }
+div.meta a.comments{ color: #999; }
 
 /* @end */
 
