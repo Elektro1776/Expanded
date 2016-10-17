@@ -85,7 +85,7 @@ h6{ font-size: 11px; }
 h1.title{ font-size: 48px; line-height: 1.5; margin:10px 0 20px; font-weight: 700;}
 h1.title a{color:#ffffff}
 h1.title a:hover{ color:#dcdcdc;}
-h2.title{ font-size: 24px; }
+h2.title{ font-size: 24px; color:#333; }
 h3.title{ font-size: 16px; line-height: 1.4; }
 h4.title{ font-size: 16px; line-height: 1.4; }
 h5.title{ font-size: 14px; }
@@ -316,7 +316,7 @@ body.cover #single div.main-image .boxed.cover{
 }
 .new_nav img{width:100%;}
 .info i{
-	color: #db2bcc;
+	color: #000;
 	font-size: 3em !important;
 }
 .info:hover i{
@@ -332,13 +332,13 @@ body.cover #single div.main-image .boxed.cover{
 .info span{
 	font-size:2em;
 	margin-top:5px;
-	color: #db2bcc;
+	color: #000;
 }
 .info:hover p{
 	color: #ccc;
 }
 .info .fa-info-circle{
-	color: #db2bcc;
+	color: #000;
 }
 .info .fa-info-circle:hover{
 	color:#ccc;
@@ -347,7 +347,7 @@ body.cover #single div.main-image .boxed.cover{
 	padding:0;
 }
 .navbar-search{
-	color: #db2bcc;
+	color: #000;
 	position: relative;
 	float:right;
 }
@@ -355,7 +355,7 @@ body.cover #single div.main-image .boxed.cover{
 	color: #ccc;
 }
 .btn{
- background-color:#DB2BCC;
+ background-color:#faa21b;
  color:white;
 border-radius:25px;
 
@@ -382,6 +382,10 @@ border-radius:25px;
  background-color:#DB2BCC;
 	 display:inline-flex;
 }
+
+.new_nav_scroll .dropdown li:hover {
+	background-color: #faa21b;
+}
 /* Links inside the dropdown */
 /*.dropdown-menu {
 	 top:-5px;
@@ -392,7 +396,7 @@ border-radius:25px;
 
 }
 .extra-padding:hover {
-    background-color: #db2bcc;
+    background-color: #faa21b;
     color: #fff;
 }
 .nav-dropdown:hover .dropdown-menu {
@@ -728,7 +732,7 @@ div.meta a.comments i.fa{ margin-right: 3px; }
  font-weight: 500;
  font-size: 12px;
  font-family: "Montserrat", serif;
- color:#db2bcc;
+ color:#faa21b;
 }
 
 /* Share buttons */
