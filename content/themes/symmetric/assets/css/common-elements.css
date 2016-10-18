@@ -197,7 +197,7 @@ section.widget ul li:last-of-type{ padding-bottom: 0 !important; }
 }
 .main-nav-menu{padding:0;}
 .nav-extra-padding{padding:10px;}
-.trending i{font-size: 3em;color: #000; padding-top:20px;padding-bottom:10px;}
+.trending i{font-size: 3em;color: #faa21b; padding-top:20px;padding-bottom:10px;}
 .new_nav{border-bottom: 1px solid #e7e7e7;}
 .post-nav{width:100%;position:absolute;background-color:#fff; margin-bottom:50px;}
 .nav-wrap{position:relative}

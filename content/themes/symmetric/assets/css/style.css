@@ -79,7 +79,7 @@ h5{ font-size: 13px; }
 h6{ font-size: 11px; }
 .title{ font-family: 'Roboto Condensed'; font-weight: bold; line-height: 1.5; }
 .title.bordered{
-	border-left: 5px solid  #db2bcc;
+	border-left: 5px solid  #faa21b;
 	padding-left: 10px;
 }
 h1.title{ font-size: 48px; line-height: 1.5; margin:10px 0 20px; font-weight: 700;}
@@ -295,6 +295,7 @@ body.cover #single div.main-image .boxed.cover{
 	padding-top: 20px;
 	 z-index:10;
 	 padding-right:0;
+	 padding-left: 0;
 }
 /* The container <div> - needed to position the dropdown content */
 .dropdown {
@@ -316,7 +317,7 @@ body.cover #single div.main-image .boxed.cover{
 }
 .new_nav img{width:100%;}
 .info i{
-	color: #000;
+	color: #faa21b;
 	font-size: 3em !important;
 }
 .info:hover i{
@@ -338,7 +339,7 @@ body.cover #single div.main-image .boxed.cover{
 	color: #ccc;
 }
 .info .fa-info-circle{
-	color: #000;
+	color: #faa21b;
 }
 .info .fa-info-circle:hover{
 	color:#ccc;
@@ -470,7 +471,7 @@ position:absolute;
 }
 
 .email-button {
-	background-color: #380036;
+	background-color: #000;
 }
 .email{
 	padding-left:10px;
@@ -1257,7 +1258,7 @@ section.tweets div.slick .slick-next{ right: 20px; }
 
 /*Subscribe btn*/
 .subscribe_btn{
- background-color:#DB2BCC;
+ background-color:#faa21b;
  color:white;
  display: block;
  text-align: center;

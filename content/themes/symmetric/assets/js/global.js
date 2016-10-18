@@ -166,10 +166,10 @@
                    // Set height to prevent instant jumpdown when max height
                    // is
                    // removed
-                   "height" : $up.height(),
+                   "height" : "100%",
                    "max-height" : 9999
                  })
-                  .animate({"height" : totalHeight});
+                  .animate({"height" : "100%"});
 
               // fade out read-more
               $p.fadeOut();
