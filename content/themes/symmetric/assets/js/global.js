@@ -4,7 +4,25 @@
   /* Dom Loaded */
   $(document)
       .ready(function($) {
-        if ($('body').hasClass('post-template')) {
+        ///Insert Teads Ad
+        if($('div').hasClass('closedpage-content')){
+
+        (function(){
+          var textNodes = document.getElementById('content-area').children;
+          var textArray = $(textNodes).toArray();
+          var textLength = textArray.length;
+          var i = Math.ceil(textLength/2);
+          console.log(i);
+         $(textArray[i]).after("<div id='insert_teads_ad'></div>");
+
+         //////
+
+
+
+       })();
+
+     }
+        /*if ($('body').hasClass('post-template')) {
           (function() {
             var referer = "";
             try {
@@ -28,7 +46,7 @@
             var rcds = document.getElementById("rcjsload_3d3aad");
             rcds.appendChild(rcel);
           })();
-        }
+        }*/
         var $window = $(window), ath = $('#addThis'),
             athScroll = $('#addThis_scroll');
 
@@ -58,7 +76,7 @@
           // 2nd set Add this Buttons on Scroll
           athScroll
               .addClass(
-                  "col-xs-6 col-lg-4 col-md-5")
+                  "col-xs-6 col-sm-5 col-lg-4 col-md-5")
               .css({
                 "display" : "inline-flex",
                 "clear" : "none",
@@ -104,7 +122,7 @@
             if (scroll_top >= post_header) {
               //  addThis.css({'visibility' : 'visible'}).sticky({zIndex : 6});
               //  ath.css({'visibility' : 'visible'}).sticky({zIndex : 7});
-              $trending.css({'visibility' : 'visible'});
+              $trending.css({'display' : 'none'});
               //$logo_words.css({'visibility' : 'hidden'});
               //$mobileLogoD.css({'visibility' : 'hidden'});
               $scrollNav.css({'visibility' : 'visible'});
@@ -135,7 +153,7 @@
         //     menuWrapper.unstick();
         //   }
         // }
-        $('#ad_3').affix({offset : {top : 200}}).css("top", "70px");
+        //$('#ad_4').affix({offset : {top : 200}}).css("top", "70px");
 
         $('.row-wrap').siblings().wrapAll("<div class='row' /div>");
         deBouncer(jQuery, 'smartresize', 'resize', 50);
@@ -180,6 +198,27 @@
             });
 
         // END OF READ MORE BUTTON FADE OUT
+
+
+     /*var iframe = document.createElement('iframe');
+     iframe.style.width = "300px";
+     iframe.style.height = "250px";
+     $(iframe).attr("id","myIframe");
+     //$(textArray[i]).after(iframe);
+     $('#ad_4').append(iframe);
+     var doc = document.getElementById('myIframe').contentWindow.document;
+     doc.open();
+     doc.write("<div id='tbn-6824972e-2777-1f3e-137f-a4d58d24a499'>"+"<script type='text/javascript'>window.$tbn = window.$tbn || {'d':function(){}}; $tbn.d('6824972e-2777-1f3e-137f-a4d58d24a499');</script>"+"</div>");
+     doc.close();
+     $(doc).find('head').append("<script type='text/javascript' src='//delivery.thebloggernetwork.com/3cf7ecf9-e410-42e7-a669-b8a304357f66.js'></script>");
+     //document.getElementById('myIframe').appendChild("<div id=tbn-acc828ff-71cc-bdba-9934-ad9aa81195d8></div>");
+     var s = document.createElement('script');
+     s.setAttribute('type', 'text/javascript');
+     s.innerHTML = "<script type='text/javascript'>window.$tbn = window.$tbn || {'d':function(){}}; $tbn.d('6824972e-2777-1f3e-137f-a4d58d24a499');</script> ";
+     document.getElementById('tbn-6824972e-2777-1f3e-137f-a4d58d24a499').appendChild(s);
+     */
+     //window.$tbn = window.$tbn || {"d":function(){}}; $tbn.d("acc828ff-71cc-bdba-9934-ad9aa81195d8");
+
       /*  var create_excerpt = function(html_input){
           var tmpInnerText = $.parseHTML(html_input)
           $.each(tmpInnerText, function(index,value){
@@ -203,7 +242,7 @@
 
         function insertPost(postData, onTagPage) {
           var timeago = moment(postData.published_at).startOf('hour').fromNow();
-          console.log(create_excerpt(postData.html));
+          //console.log(create_excerpt(postData.html));
           var postInfo = "";
 
           if(onTagPage){
@@ -271,15 +310,15 @@
                               <div class="boxed overlay"></div>\
                             </div>\
                       </div>\
-                      <div class="center content section ">\
+                      <div class=" content section ">\
                         <article class="post">\
                           <section class="post-content" style="margin-bottom:50px;">\
-                          <div class="ad-container col-lg-4 col-xs-12"></div>';
+                          <div class="ad-container col-lg-5 col-md-8 col-xs-12"><iframe id="4691cc7ed1" name="4691cc7ed1" src="http://us-ads.openx.net/w/1.0/afr?auid=537283410&cb=INSERT_RANDOM_NUMBER_HERE" frameBorder="0" frameSpacing="0" scrolling="no" width="300" height="250"><a href="http://us-ads.openx.net/w/1.0/rc?cs=4691cc7ed1&cb=INSERT_RANDOM_NUMBER_HERE" ><img src="http://us-ads.openx.net/w/1.0/ai?auid=537283410&cs=4691cc7ed1&cb=INSERT_RANDOM_NUMBER_HERE" border="0" alt=""></a></iframe></div>';
             postInfo +=
-                '<div class="row fade-out" style=margin-left:0;>\
+                '<div class="fade-out" style=margin-left:0;>\
               <div class="text">' +
                 postData.html +
-                '</div><p class="read-more"><a class="btn" href="#">Read More</a></p>\
+                '</div><p class="read-more"><a class="btn" href="' + postData.url + 'op " >Read More</a></p>\
               <div class="clear"></div>\
               </div>\
                             </section>\
@@ -310,13 +349,25 @@
           //console.log(tagTemplate);
           //console.log('bobs your uncle')
           var page = 3;
-
+          var $body = $(".post-template");
           $(window)
               .scroll(function() {
-                if ($window.scrollTop() + $window.height() >=
-                        parseInt($(document).height()) &&
+                if($('main').hasClass('no-infinite')){
+                  return false
+                }else{
+
+                  function loading(){
+                    $body.addClass('loading');
+                  }
+                  function doneLoading(){
+                    $body.removeClass('loading');
+                  }
+
+                if (Math.ceil($window.scrollTop() + $window.height()) >=
+                        parseInt($(document).height())-20 &&
                     trueContent == false) {
                   ++page;
+                  $body.addClass("loading")
 
                   if(tagTemplate){
                     var tagName = "tag:" + location.pathname.slice(5).replace('/','')
@@ -335,16 +386,18 @@
                     $.getJSON(ghost.url.api(
                                   'posts',
                                   {limit : 4, page : page, include : "author"}))
-                        .done(function(data) {
-                          $.each(data.posts,
-                                 function(i, post) { insertPost(post); });
+                                  .done(function(data) {
+                                    $.each(data.posts,
+                                      function(i, post) { insertPost(post); });
                           // console.log('posts', data.posts);
-                        })
-                        .fail(function(err) { console.log(err); });
+                              })
+                              .done(setTimeout(doneLoading, 1000))
+                              .fail(function(err) { console.log(err); });
                   }
-
+                    //console.log($body);
 
                 }
+              }
                 // console.log($('.post').length);
               });
         }
@@ -633,7 +686,7 @@
 
         /* Code Prettify */
 
-        prettyPrint();
+      //  prettyPrint();
 
         /* Sidebar */
 

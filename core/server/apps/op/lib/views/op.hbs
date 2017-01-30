@@ -1,0 +1,151 @@
+{{!< default}}
+
+{{! The comment above "< default" means - insert everything in this file into
+    the {body} of the default.hbs template, which contains our header/footer. }}
+
+<!-- start: #single -->
+<div class="container content-wrap">
+<div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+		<main id="single" class="main " role="main">
+		{{#post}}
+			<!-- start: .meta -->
+			<div class="meta col-lg-12 col-md-12 col-xs-12">
+				<a href="{{url}}" class="local">
+				<h1 class="title" id="post_title" style="font-family:Roboto Condensed;">{{title}}</h1>
+				</a>
+				<div class="addthis_sharing_toolbox col-lg-4 col-md-6 col-sm-8 col-xs-8 " style=""></div>
+					<div class="pull-right">
+						<span>
+							Like Us On Facebook!
+						</span>
+					<div class="fb-like pull-right" data-href="https://www.facebook.com/expandconciousness/" data-layout="button_count" data-action="like" data-size="small" data-show-faces="true" data-share="false" style="display:inline-block;"></div>
+				</div>
+		    </div>
+		    <div class="clear">
+		    </div>
+		    {{#if image}}
+		        {{^has tag="no cover"}}
+
+		                <div class="main-image cover">
+											<img src="{{image}}"  style="width:100%" height="400"  alt="" />
+		                    <div class="center grid-container">
+		                        <div class="boxed cover" style="background: url({{image}});"></div>
+		                        <div class="boxed overlay"></div>
+		                    </div>
+		                </div>
+										<!--<div class="addthis_sharing_toolbox "></div>-->
+		        {{/has}}
+		    {{/if}}
+		<div class="clear"></div>
+				<!-- start: .center -->
+				<div class=" content section grid-container {{#has tag="no cover"}}no-cover{{/has}}">
+						<!-- start: .content -->
+
+							<article class="{{post_class}}">
+								{{#has tag="no cover"}}
+									<header>
+										<!-- start: .meta -->
+										<div class="meta">
+											{{#if tags}}
+												<div class="tags">
+													{{tags separator=""}}
+												</div>
+											{{/if}}
+											<time datetime="{{date format="YYYY-MM-DD"}}"><i class="fa fa-clock-o"></i> {{date}}</time>
+											<a href="#comments" class="comments alignright"><i class="fa fa-comment"></i> <span class="disqus-comment-count" data-disqus-url="{{@blog.url}}{{url}}">0</span></a>
+										</div>
+										<!-- end: .meta -->
+										<div class="clear"></div>
+										<h2 class="title">{{title}}</h2>
+										<div class="post-format">
+											{{#if image}}
+												<div class="main-image"><img src="{{image}}"></div>
+											{{/if}}
+										</div>
+									</header>
+								{{/has}}
+								<section class="post-content " style="z-index:999;margin-bottom:50px;">
+									<div class="ad-container col-lg-4 col-md-4 ">
+
+											<!--TBN BTF 300x250 pos 3 STARTS-->
+											<div id="tbn-dc464de3-e9d0-4a75-68fb-63408f938b75">
+											     <script type="text/javascript">window.$tbn = window.$tbn || {"d":function(){}}; $tbn.d("dc464de3-e9d0-4a75-68fb-63408f938b75");</script>
+											</div>
+											<!--TBN BTF 300x250 pos 3 ENDS-->
+										</div>
+
+											<div class="  post_subscribe_form col-lg-7 col-md-6 col-sm-10 col-xs-12">
+													{{subscribe_form placeholder="Your Email Here"}}
+												</div>
+												<div class="clear">
+
+												</div>
+											<!--<div class="row" style="clear:left;"-->
+										<!--	</div>-->
+													{{#if error}}
+													    <p class="main-error">{{{error.message}}}</p>
+													{{/if}}
+														<div id="main-text" class="text">{{content}}</div>
+		              </section>
+							</article>
+							<div id="ld-2048-8119"></div>
+							<script>(function(w,d,s,i){w.ldAdInit=w.ldAdInit||[];w.ldAdInit.push({slot:8925021968153959,size:[0, 0],id:"ld-2048-8119"});if(!d.getElementById(i)){var j=d.createElement(s),p=d.getElementsByTagName(s)[0];j.async=true;
+								j.src="//cdn2.lockerdome.com/_js/ajs.js";
+								j.id=i;p.parentNode.insertBefore(j,p);}})(window,document,"script","ld-ajs");
+							</script>
+
+							<div id="rcjsload_ecd2ca"></div>
+								<script type="text/javascript">
+								(function() {
+								var referer="";try{if(referer=document.referrer,"undefined"==typeof referer)throw"undefined"}catch(exception){referer=document.location.href,(""==referer||"undefined"==typeof referer)&&(referer=document.URL)}referer=referer.substr(0,700);
+								var rcel = document.createElement("script");
+								rcel.id = 'rc_' + Math.floor(Math.random() * 1000);
+								rcel.type = 'text/javascript';
+								rcel.src = "http://trends.revcontent.com/serve.js.php?w=3340&t="+rcel.id+"&c="+(new Date()).getTime()+"&width="+(window.outerWidth || document.documentElement.clientWidth)+"&referer="+referer;
+								rcel.async = true;
+								var rcds = document.getElementById("rcjsload_ecd2ca"); rcds.appendChild(rcel);
+								})();
+								</script>
+
+		      </div>
+		      <div class="clear"></div>
+	    		<div class="clear"></div>
+						<!-- end: .content -->
+		    {{/post}}
+		    {{>sidebar-featured}}
+				<!-- end: .center -->
+</main>
+<!-- end: #single -->
+</div>
+<div class="hidden-xs col-lg-4 col-sm-4 pull-right">
+	<div class="ad-wrapper" id="ad_4">
+		<!--TBN BTF 300x250 pos 4 STARTS-->
+		<div id="tbn-22831ceb-6dce-d4be-23ad-65d54a5f4058">
+				 <script type="text/javascript">window.$tbn = window.$tbn || {"d":function(){}}; $tbn.d("22831ceb-6dce-d4be-23ad-65d54a5f4058");</script>
+		</div>
+	<!--TBN BTF 300x250 pos 4 ENDS-->
+	<div id="rcjsload_2ea223"></div>
+<script type="text/javascript">
+(function() {
+var referer="";try{if(referer=document.referrer,"undefined"==typeof referer)throw"undefined"}catch(exception){referer=document.location.href,(""==referer||"undefined"==typeof referer)&&(referer=document.URL)}referer=referer.substr(0,700);
+var rcel = document.createElement("script");
+rcel.id = 'rc_' + Math.floor(Math.random() * 1000);
+rcel.type = 'text/javascript';
+rcel.src = "http://trends.revcontent.com/serve.js.php?w=13527&t="+rcel.id+"&c="+(new Date()).getTime()+"&width="+(window.outerWidth || document.documentElement.clientWidth)+"&referer="+referer;
+rcel.async = true;
+var rcds = document.getElementById("rcjsload_2ea223"); rcds.appendChild(rcel);
+})();
+</script>
+
+	</div>
+</div>
+<div class="clear"></div>
+	<div class=" col-lg-8 col-md-8 col-sm-8 col-xs-12">
+		<section class="related grid-container grid-parent">
+			<h3 class="title bordered">RELATED POSTS</h3>
+			{{>related_posts}}
+			<div class="loaded_content">
+			</div>
+		</section>
+	</div>
+</div>

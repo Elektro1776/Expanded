@@ -79,14 +79,14 @@
 		padding-top: 10px;
 	}
 	.post-content {
-		width:	107%;
+		width:	100%;
 	}
 	.post-template .fade-1{
 
 		left: -5px;
 	}
 	.post-template .fade-out{
-		width:	107%;
+		width:	100%;
 		left: -5px;
 	}
 .mobile-logo-words{
@@ -97,6 +97,7 @@
 }
 	.ad-container{
 		margin-left: -25px;
+		padding-right:0px!important;
 	}
 }
 /* IPHONE 6 plus */
@@ -127,15 +128,15 @@
 		padding-top: 10px;
 	}
 	.post-content {
-		width:	107%;
+		width:	100%;
 	}
 	.post-template .fade-1{
 		width:	107%;
 		left: -5px;
 	}
 	.post-template .fade-out{
-		width:	107%;
-		left: -5px;
+		width:	100%;
+
 	}
 	.mobile-logo-words{
 		display:none;
@@ -315,7 +316,7 @@ div.articles article div.post-excerpt{
 
 /* Tablets */
 @media screen and (max-width: 680px){
-	.container {max-width:480px;}
+	/*.container {max-width:480px;}*/
 }
 @media screen and (max-width: 768px){
 
@@ -336,7 +337,7 @@ article.mainImg{
 	}
 	#ad_1>img{display:none!important;}
 
-	.container{max-width: 480px;}
+	/*.container{max-width: 480px;}*/
 
 /*	#single div.main-image.cover {
 			height: 300px;
@@ -481,7 +482,7 @@ h1.title{
     top: 0px;
 		}
 		.main {
-    margin-top: 40px;
+    margin-top: 80px;
 }
 .#info_nav_Wrap_1{
 	padding-bottom:10px;
@@ -557,7 +558,7 @@ h1.title{
 			#ad_3 img{display:none}
 			#post_title{font-size:24px!important;line-height:32px;}
 			#header{ padding-top: 12px; height:80px; }
-			.main{margin-top:25px;}
+			.main{margin-top:108px;}
 				.col-xs-6{width:50%;}
 }
 

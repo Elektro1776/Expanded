@@ -3,7 +3,7 @@ module.exports = {
         id: {type: 'increments', nullable: false, primary: true},
         uuid: {type: 'string', maxlength: 36, nullable: false, validations: {isUUID: true}},
         title: {type: 'string', maxlength: 150, nullable: false},
-        slug: {type: 'string', maxlength: 150, nullable: false, unique: true},
+        slug: {type: 'string', maxlength: 1500, nullable: false, unique: true},
         markdown: {type: 'text', maxlength: 16777215, fieldtype: 'medium', nullable: true},
         mobiledoc: {type: 'text', maxlength: 1000000000, fieldtype: 'long', nullable: true},
         html: {type: 'text', maxlength: 16777215, fieldtype: 'medium', nullable: true},

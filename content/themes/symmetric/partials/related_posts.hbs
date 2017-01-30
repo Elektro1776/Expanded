@@ -1,13 +1,53 @@
-{{#get "posts"  filter="id:-{{post.id}}" limit=4}}
+
+
+
+<style type="text/css">
+#af-form-1863269727 .af-body .af-textWrap{width:100%;display:block;float:none;}
+#af-form-1863269727 .af-body input.text, #af-form-1863269727 .af-body textarea{background-color:#FFFFFF;border-color:#D9D9D9;border-width:1px;border-style:solid;color:#000;text-decoration:none;font-style:normal;font-weight:normal;font-size:24px;font-family:Trebuchet MS, sans-serif;}
+#af-form-1863269727 .af-body input.text:focus, #af-form-1863269727 .af-body textarea:focus{background-color:#FFFAD6;border-color:#030303;border-width:1px;border-style:solid;}
+#af-form-1863269727 .af-body label.previewLabel{display:block;float:none;text-align:left;width:100%;color:#000000;text-decoration:none;font-style:normal;font-weight:normal;font-size:24px;font-family:Helvetica, sans-serif;}
+#af-form-1863269727 .af-body{padding-bottom:15px;padding-top:15px;background-repeat:no-repeat;background-position:inherit;background-image:none;color:#CCCCCC;font-size:11px;font-family:Verdana, sans-serif;}
+#af-form-1863269727 .af-quirksMode{padding-right:68px;padding-left:68px;}
+#af-form-1863269727 .af-standards .af-element{padding-right:0px;padding-left:0px;}
+#af-form-1863269727 .buttonContainer input.submit{background-image:none;background-color:#faa21b;color:#FFFFFF;text-decoration:none;font-style:normal;font-weight:normal;font-size:24px;text-align: center;font-family:Trebuchet MS, sans-serif;}
+#af-form-1863269727 .buttonContainer input.submit{width:100%;}
+#af-form-1863269727 .buttonContainer{text-align:center;}
+#af-form-1863269727 button,#af-form-1863269727 input,#af-form-1863269727 submit,#af-form-1863269727 textarea,#af-form-1863269727 select,#af-form-1863269727 label,#af-form-1863269727 optgroup,#af-form-1863269727 option{float:none;position:static;margin:0;}
+#af-form-1863269727 div{margin:0;}
+#af-form-1863269727 form,#af-form-1863269727 textarea,.af-form-wrapper,.af-form-close-button,#af-form-1863269727 img{float:none;color:inherit;position:static;background-color:none;border:none;margin:0;padding:0;}
+#af-form-1863269727 input,#af-form-1863269727 button,#af-form-1863269727 textarea,#af-form-1863269727 select{font-size:100%;}
+#af-form-1863269727 select,#af-form-1863269727 label,#af-form-1863269727 optgroup,#af-form-1863269727 option{padding:0;}
+#af-form-1863269727,#af-form-1863269727 .quirksMode{width:100%;max-width:367px;}
+#af-form-1863269727.af-quirksMode{overflow-x:hidden;}
+#af-form-1863269727{border-color:#ADADAD;border-width:1px;border-style:none;}
+#af-form-1863269727{display:block;}
+#af-form-1863269727{overflow:hidden;}
+.af-body .af-textWrap{text-align:left;}
+.af-body input.image{border:none!important;}
+.af-body input.submit,.af-body input.image,.af-form .af-element input.button{float:none!important;}
+.af-body input.text{width:100%;float:none;padding:2px!important;}
+.af-body.af-standards input.submit{padding:3px;}
+.af-clear{clear:both;}
+.af-element label{text-align:left;display:block;float:left;}
+.af-element{padding-bottom:5px;padding-top:5px;}
+.af-form-wrapper{text-indent:0;}
+.af-form{text-align:left;margin:auto;}
+.af-quirksMode .af-element{padding-left:0!important;padding-right:0!important;}
+.lbl-right .af-element label{text-align:right;}
+
+</style>
+
+{{#get "posts" limit="4" filter="id:-{{post.id}}"}}
 {{#foreach posts }}
 
 <!-- start: .meta -->
+
 <div class="meta">
   <a href="{{url}}" class="local">
   <h1 class="title" id="post_title" style="font-family:Playfair Display;">{{title}}</h1>
   </a>
-  <div class="fb-like" data-href="https://www.facebook.com/HeartCenteredRebalancing" data-layout="button_count" data-action="like" data-size="small" data-show-faces="true" data-share="false"></div>
-      <div class="row">
+  <div class="fb-like" data-href="https://www.facebook.com/expandconciousness/" data-layout="button_count" data-action="like" data-size="small" data-show-faces="true" data-share="false" style="display:inline-block;"></div>
+    <div class="row">
               {{#if tags}}
             <div class="tags">
                   {{tags separator=""}}
@@ -19,6 +59,7 @@
 
   {{#if image}}
       {{^has tag="no cover"}}
+           <a href="{{url}}">
               <div class="main-image cover">
                 <img src="{{image}}"  style="width:100%" height="400"  alt="" />
                   <div class="center grid-container">
@@ -26,11 +67,12 @@
                       <div class="boxed overlay"></div>
                   </div>
               </div>
+            </a>
           {{/has}}
   {{/if}}
 
     <!-- start: .center -->
-  <div class="center content section grid-container {{#has tag="no cover"}}no-cover{{/has}}">
+  <div class=" content section grid-container {{#has tag="no cover"}}no-cover{{/has}}">
 
       <!-- start: .content -->
 
@@ -47,41 +89,104 @@
                   <time datetime="{{date format="YYYY-MM-DD"}}"><i class="fa fa-clock-o"></i> {{date}}</time>
                 </div>
                 <!-- end: .meta -->
-                <div class="clear"></div>
+                <!-- <div class="clear"></div> -->
                 <h2 class="title">{{title}}</h2>
                 <div class="post-format">
                   {{#if image}}
-                    <div class="main-image"><img src="{{image}}"></div>
+                    <a href="{{url}}">
+                      <div class="main-image"><img src="{{image}}"></div>
+                    </a>
                   {{/if}}
                 </div>
             </header>
 
           {{/has}}
           <section class="post-content" style="margin-bottom:50px;">
-            
-            <div class="ad-container col-lg-4 col-xs-12">
-              <!--TBN ATF 300x250 pos 1 STARTS-->
+
+            <div class="ad-container col-lg-6 col-lg-offset-0 col-md-8 col-md-offset-2 col-sm-12 col-sm-offset-0 col-xs-offset-0 col-xs-12 ">
+              <iframe id="4691cc7ed1" name="4691cc7ed1" src="http://us-ads.openx.net/w/1.0/afr?auid=537283410&cb=INSERT_RANDOM_NUMBER_HERE" frameBorder="0" frameSpacing="0" scrolling="no" width="300" height="250"><a href="http://us-ads.openx.net/w/1.0/rc?cs=4691cc7ed1&cb=INSERT_RANDOM_NUMBER_HERE" >
+                <img src="http://us-ads.openx.net/w/1.0/ai?auid=537283410&cs=4691cc7ed1&cb=INSERT_RANDOM_NUMBER_HERE" border="0" alt=""></a>
+              </iframe>
+                <!--TBN ATF 300x250 pos 1 STARTS
               	<div id="tbn-c36c04fd-455a-3e7e-b314-7800a9ee86a3">
               	     <script type="text/javascript">window.$tbn = window.$tbn || {"d":function(){}}; $tbn.d("c36c04fd-455a-3e7e-b314-7800a9ee86a3");</script>
               	</div>
-              <!--TBN ATF 300x250 pos 1 ENDS-->
+              TBN ATF 300x250 pos 1 ENDS-->
             </div>
 
-            <div class=" post_subscribe_form col-lg-7 col-md-6 col-sm-10">
-                {{subscribe_form placeholder="Your Email Here"}}
+          <div class=" post_subscribe_form col-lg-6 col-md-12 col-sm-12 col-xs-12">
+            <form method="post" class="af-form-wrapper" accept-charset="UTF-8" action="https://www.aweber.com/scripts/addlead.pl"  >
+              <div style="display: none;">
+                <input type="hidden" name="meta_web_form_id" value="1863269727" />
+                <input type="hidden" name="meta_split_id" value="" />
+                <input type="hidden" name="listname" value="awlist3858695" />
+                <input type="hidden" name="redirect" value="https://www.aweber.com/thankyou-coi.htm?m=text" id="redirect_f9d3eef344eb8473e9eda7736f1fdc1b" />
+                <input type="hidden" name="meta_adtracking" value="Expanded-postPage" />
+                <input type="hidden" name="meta_message" value="1" />
+                <input type="hidden" name="meta_required" value="email" />
+                <input type="hidden" name="meta_tooltip" value="" />
               </div>
+              <div id="af-form-1863269727" class="af-form"><div id="af-body-1863269727" class="af-body af-standards">
+              <div class="af-element col-lg-7">
+              <label class="previewLabel" for="awf_field-87019760"></label>
+              <div class="af-textWrap"><input class="text" id="awf_field-87019760" style="height:42px;"type="text" name="email" value="" tabindex="500" onfocus=" if (this.value == '') { this.value = ''; }" onblur="if (this.value == '') { this.value='';} " />
+              </div><div class="af-clear"></div>
+              </div>
+              <div class="af-element col-lg-4 buttonContainer">
+              <input name="submit" class="submit" type="submit" value="Subscribe" tabindex="501" />
+              <div class="af-clear"></div>
+              </div>
+              </div>
+              </div>
+              <div style="display: none;"><img src="https://forms.aweber.com/form/displays.htm?id=jBxszExsnOxM7A==" alt="" /></div>
+            </form>
+              <script type="text/javascript">
+              // Special handling for facebook iOS since it cannot open new windows
+              (function() {
+                if (navigator.userAgent.indexOf('FBIOS') !== -1 || navigator.userAgent.indexOf('Twitter for iPhone') !== -1) {
+                    document.getElementById('af-form-1863269727').parentElement.removeAttribute('target');
+                }
+              })();
+              </script>
+              <script type="text/javascript">
+                <!--
+                (function() {
+                    var IE = /*@cc_on!@*/false;
+                    if (!IE) { return; }
+                    if (document.compatMode && document.compatMode == 'BackCompat') {
+                        if (document.getElementById("af-form-1863269727")) {
+                            document.getElementById("af-form-1863269727").className = 'af-form af-quirksMode';
+                        }
+                        if (document.getElementById("af-body-1863269727")) {
+                            document.getElementById("af-body-1863269727").className = "af-body inline af-quirksMode";
+                        }
+                        if (document.getElementById("af-header-1863269727")) {
+                            document.getElementById("af-header-1863269727").className = "af-header af-quirksMode";
+                        }
+                        if (document.getElementById("af-footer-1863269727")) {
+                            document.getElementById("af-footer-1863269727").className = "af-footer af-quirksMode";
+                        }
+                    }
+                })();
+                -->
+              </script>
+            </div>
 
                 {{#if error}}
                   <p class="main-error">{{{error.message}}}</p>
                 {{/if}}
 
-              <div class="row fade-out">
+              <div class=" fade-out">
                   <div class="text">{{content}}</div>
-                    <p class="read-more"><a class="btn" href="{{url}}">Read More</a></p>
+                    <p class="read-more"><a class="btn" href="{{url}}op">Read More</a></p>
               </div>
             </section>
         </article>
       </div>
   </div>
+  <div class="clear">
+
+  </div>
+
   {{/foreach}}
 {{/get}}

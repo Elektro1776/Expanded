@@ -17,6 +17,7 @@ var config = require('../../config'),
     privatePattern = new RegExp('^\\/' + config.routeKeywords.private + '\\/'),
     subscribePattern = new RegExp('^\\/' + config.routeKeywords.subscribe + '\\/'),
     ampPattern = new RegExp('\\/' + config.routeKeywords.amp + '\\/$'),
+    oPPattern = new RegExp('\\/' + config.routeKeywords.oP + '\\/$'),
     rssPattern = new RegExp('^\\/rss\\/'),
     homePattern = new RegExp('^\\/$');
 
@@ -49,6 +50,9 @@ function setResponseContext(req, res, data) {
     // Add context 'amp' to either post or page, if we have an `*/amp` route
     if (ampPattern.test(res.locals.relativeUrl) && data.post) {
         res.locals.context.push('amp');
+    }
+    if (oPPattern.test(res.locals.relativeUrl) && data.post) {
+        res.locals.context.push('oP');
     }
 
     // Each page can only have at most one of these

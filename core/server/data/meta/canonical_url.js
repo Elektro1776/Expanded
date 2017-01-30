@@ -8,6 +8,9 @@ function getCanonicalUrl(data) {
     if (url.indexOf('/amp/')) {
         url = url.replace(/\/amp\/$/i, '/');
     }
+    if (url.indexOf('/oP/')) {
+        url = url.replace(/\/page_2\/$/i, '/');
+    }
     return url;
 }
 

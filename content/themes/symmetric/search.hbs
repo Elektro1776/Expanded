@@ -1,36 +1,73 @@
 {{!< default}}
-<style>
-#results{
-  margin-left:20px;
-}
-</style>
-<h2 id="results" class="title bordered uppercase">{{count}} Results for: {{query}}</h2>
-{{#foreach posts}}
-<div class="col-lg-8 col-md-8 col-xs-12">
 
-<article class=" {{post_class}} {{#if @rowStart}} {{/if}} {{#if @rowEnd}}  {{/if}}" style="height:auto;margin-top:50px;">
-  <header>
-    <div class="meta">
-      <div class="alignleft">
+{{! The comment above "< default" means - insert everything in this file into
+    the {body} of the default.hbs template, which contains our header/footer. }}
 
-        <h2 class="title" ><a href="http://heartcenteredrebalancing.com/{{{slug}}}">{{{title}}}</a></h2>
-        {{excerpt words=30}}
-        </div>
-      <div class="clear"></div>
-    </div>
-    {{#if image}}
-    <!--  <a href="{{url}}" class="thumb hover-effect">
-        <div class="" style=" padding-bottom:64.5%;background:url({{image}}); background-size:cover; background-repeat: no-repeat;">
-          </div>
-      </a>-->
-    {{else}}
-      {{content words="0"}}
-    {{/if}}
-<div class="clear"></div>
+<main id="home" class="main" role="main">
+
+	<!-- start: .center -->
 
 
-  </header>
-</article>
 
-</div>
-  {{/foreach}}
+		<!-- start: .left-content -->
+		<div class="left-content section articles pull-left col-md-8 " style="margin-top:0;">
+      <h1>{{count}} Results for: {{query}} </h1>
+
+			{{#foreach posts }}
+
+					<article class="default col-md-12 {{post_class}} {{#if @first}} first-post{{/if}}">
+						<header>
+								  <div class="{{^if @first}}col-md-6 col-lg-6{{/if}} {{#if @first}} col-md-12 {{/if}}">
+
+										{{#if image}}
+											<a datetime="{{date format="YYYY-MM-DD"}}" href="http://expandedconsciousness.com/{{date format="YYYY/MM/DD"}}/{{slug}}" class="thumb hover-effect">
+												<img src="{{image}}" style="">
+											</a>
+										{{else}}
+											{{content words="0"}}
+										{{/if}}
+
+									</div>
+									<!--	<div class="clear"></div>-->
+									<div class="{{^if @first}}col-md-6 col-lg-6{{/if}} col-md-12 col-xs-12">
+
+										<div id="meta">
+
+										<div class="meta">
+											<div id="time">
+
+												<time class="defaultArticleTime"datetime="{{date format="YYYY-MM-DD"}}"><i class="defaultFa fa fa-clock-o"></i>{{date}}</time>
+											</div>
+											<a href="{{url}}#comments" class="comments alignright"><i class="fa fa-comment"></i> <span class="disqus-comment-count" data-disqus-url="{{@blog.url}}{{url}}">0</span></a>
+											<div class="clear"></div>
+										</div>
+									</div>
+								<div class="row">
+								 <div class="">
+									<h4 class="title tag-title"><a datetime="{{date format="YYYY-MM-DD"}}" href="http://expandedconsciousness.com/{{date format="YYYY/MM/DD"}}/{{slug}}">{{{title}}}</a></h4>
+								</div>
+							</div>
+						</header>
+									<div class="">
+
+									<div class="post-excerpt">
+										{{excerpt words="20"}}
+										<a datetime="{{date format="YYYY-MM-DD"}}" href="http://expandedconsciousness.com/{{date format="YYYY/MM/DD"}}/{{slug}}" class="continue_reading" style="opactiy: .5;">Continue Reading</a>
+										<i class="fa fa-angle-double-right"></i>
+
+									</div>
+								</div>
+			</article>
+
+			{{/foreach}}
+
+		<!-- end: .left-content -->
+
+
+
+
+	</div>
+	<!-- end: .center -->
+
+
+</main>

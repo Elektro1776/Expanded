@@ -17,6 +17,7 @@ function postLookup(postUrl) {
         pagePermalink = '/:slug/',
         isEditURL = false,
         isAmpURL = false,
+        isopURL = false,
         matchFuncPost,
         matchFuncPage,
         postParams,
@@ -43,7 +44,10 @@ function postLookup(postUrl) {
         isEditURL = true;
     } else if (params.options && params.options.toLowerCase() === 'amp') {
         isAmpURL = true;
-    } else if (params.options !== undefined) {
+    } else if (params.options && params.options.toLowerCase() === 'op') {
+        isopURL = true;
+    }
+    else if (params.options !== undefined) {
         // Unknown string in URL, return empty
         return Promise.resolve();
     }
@@ -75,11 +79,15 @@ function postLookup(postUrl) {
         if (post.page && isAmpURL) {
             return Promise.resolve();
         }
+        if (post.page && isopURL) {
+            return Promise.resolve();
+        }
 
         return {
             post: post,
             isEditURL: isEditURL,
-            isAmpURL: isAmpURL
+            isAmpURL: isAmpURL,
+            isopURL : isopURL
         };
     });
 }

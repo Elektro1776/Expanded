@@ -23,7 +23,13 @@ html, body, div, span, applet, object, iframe,h1, h2, h3, h4, h5, h6, p, blockqu
 , output, ruby, section, summary,time, mark, audio, video, button{ margin: 0; padding: 0; border: 0; font-size: 100%; font: inherit; vertical-align: baseline; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; -webkit-font-smoothing: antialiased; }
 
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, main{ display: block; }
-
+#homepage-article{
+	padding-top:30px;
+	height:500px;
+  padding-left:1px;
+  padding-right:1px;
+	margin-bottom: 30px;
+}
 body { line-height: 1.5; }
 ol, ul { list-style: none; }
 blockquote, q { quotes: none; }
@@ -82,6 +88,7 @@ h6{ font-size: 11px; }
 	border-left: 5px solid  #faa21b;
 	padding-left: 10px;
 }
+#overlay_text > .title{color:#ffffff}
 h1.title{ font-size: 48px; line-height: 1.5; margin:10px 0 20px; font-weight: 700;}
 h1.title a{color:#ffffff}
 h1.title a:hover{ color:#dcdcdc;}
@@ -149,6 +156,33 @@ i.icon, i.fa{ font-style: normal !important; }
 hr{ border: 0; border-top: 1px solid #ccc; height: 1px; margin: 0 0 20px; }
 
 /* Content */
+.loading-modal {
+    display:    none;
+    position:   fixed;
+    z-index:    1000;
+    top:        200px;
+    left:       0;
+    height:     50%;
+    width:      100%;
+    background: #faa21b
+                url('http://i.stack.imgur.com/FhHRx.gif')
+                50% 50%
+                no-repeat;
+}
+
+/* When the body has the loading class, we turn
+   the scrollbar off with overflow:hidden */
+body.loading {
+    overflow: hidden;
+}
+
+/* Anytime the body has the loading class, our
+   modal element will be visible */
+body.loading .loading-modal {
+    display: block;
+}
+
+
 
 body.cover div.center{
 	background: #F6F6F6;
@@ -317,11 +351,11 @@ body.cover #single div.main-image .boxed.cover{
 }
 .new_nav img{width:100%;}
 .info i{
-	color: #faa21b;
+	color: #000;
 	font-size: 3em !important;
 }
 .info:hover i{
-	color: #ccc;
+	color: #faa21b;
 }
 .info p{
 	font-size:2em;
@@ -339,10 +373,10 @@ body.cover #single div.main-image .boxed.cover{
 	color: #ccc;
 }
 .info .fa-info-circle{
-	color: #faa21b;
+	color: #000;
 }
 .info .fa-info-circle:hover{
-	color:#ccc;
+	color:#faa21b;
 }
 .bars{
 	padding:0;
@@ -351,6 +385,7 @@ body.cover #single div.main-image .boxed.cover{
 	color: #000;
 	position: relative;
 	float:right;
+	padding-top:8px;
 }
 .navbar-search:hover{
 	color: #ccc;
@@ -364,6 +399,9 @@ border-radius:25px;
 .post-template .read-more .btn{
 	position: relative;
 	top:120px;
+	height: 50px;
+	width: 125px;
+	padding-top: 12px;
 }
 
 /* Dropdown Content (Hidden by Default) */
@@ -694,7 +732,7 @@ div.meta a.comments:hover{ color: #000; }
 div.meta a.comments i.fa{ margin-right: 3px; }
 
 /* Advertising */
-
+.ad-container{height:250px;}
 .ads{ margin: 40px auto 0; }
 .ads img.img-ad{ display: block; margin: 0 auto; }
 
@@ -704,8 +742,9 @@ div.meta a.comments i.fa{ margin-right: 3px; }
 .ad-wrapper #ad_4.fixed{ position: fixed; top: 15%; }
 .ad-wrapper #ad_1{ position: absolute; }
 .ad-wrapper #ad_1.fixed{ position: fixed; top: 15%; }
+.bottom-rightrail-envero{padding-top:20px;}
 /* Buttons */
-
+.affix{top:65px;}
 .button{
 	background: #FCD665;
 	color: #000;
@@ -898,13 +937,13 @@ div.gallery a:hover:before, section.widget_ep_flickr ul li a:hover:before{
 }
 #addwrap{background-color: #fff; height:35px;}
 
-
+.full-search{position:relative;}
 #header h1.logo{ max-width: 600px; text-align: center; margin: 0 auto; }
 #header h1.logo a{ font-size: 28px; line-height: 1.2; color: #fff; }
 #header h1.logo a:hover{ }
 #header h1.logo a img{ max-width: 100%; height: auto; }
 #header form{
-	position: absolute;
+	position: relative;
 	right: 0px;
 	top: 50%;
 	color: #fff;

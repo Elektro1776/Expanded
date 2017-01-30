@@ -251,9 +251,10 @@ ConfigManager.prototype.set = function (config) {
             preview: 'p',
             private: 'private',
             subscribe: 'subscribe',
-            amp: 'amp'
+            amp: 'amp',
+            op: 'op'
         },
-        internalApps: ['private-blogging', 'subscribers', 'amp'],
+        internalApps: ['private-blogging', 'subscribers', 'amp','op'],
         slugs: {
             // Used by generateSlug to generate slugs for posts, tags, users, ..
             // reserved slugs are reserved but can be extended/removed by apps

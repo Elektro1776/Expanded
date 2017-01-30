@@ -40,6 +40,9 @@ frontendRoutes = function frontendRoutes() {
         }
     });
 
+    //Search Route
+    router.get ('/search', frontend.search);
+    router.get('/trending', frontend.trending);
     // Default
     router.get('*', frontend.single);
 
