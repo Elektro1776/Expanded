@@ -61,6 +61,16 @@ if (typeof jQuery == 'undefined') {
   })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
   ga('create', 'UA-48747816-1', 'auto');
+  ga('require','urlChangeTracker', {
+shouldTrackUrlChange: function(newPath, oldPath) {
+  // Strips the query string from the path values.
+  console.log("NEW PATH",newPath, "OLD PATH",oldPath);
+  // newPath = newPath.split('?')[0];
+  // oldPath = oldPath.split('?')[0];
+
+  return newPath != oldPath;
+}
+})
   ga('send', 'pageview');
 
 </script>
@@ -98,7 +108,7 @@ if (typeof jQuery == 'undefined') {
 </head>
 
 <body class="enable_animations  {{#if @blog.cover}}cover{{/if}} {{body_class}}" {{#if @blog.cover}}style="background: url({{@blog.cover}}) no-repeat center center fixed;"{{/if}} style="overflow:hidden;">
-<div class='container'>	
+<div class='container'>
 	<div class="">
            <img height='0' width='0' alt='' src='//pixel.watch/tm0e' style='display:block;' />
 
@@ -152,8 +162,6 @@ if (typeof jQuery == 'undefined') {
     <script type="text/javascript" src="{{asset "js/tooltipster/jquery.tooltipster.min.js"}}"></script>
     <!--<script type="text/javascript" src="{{asset "built/jquery_ghostHunter.min.js"}}"></script>-->
     <script type="text/javascript" src="{{asset "js/bootstrap.min.js"}}"></script>
-    <!-- <script>ggv2id='40ea5be6';</script>
-    <script src="https://g2.gumgum.com/javascripts/ggv2.js"></script> -->
 
     <script type='text/javascript'>
     var googletag = googletag || {};
@@ -182,25 +190,14 @@ if (typeof jQuery == 'undefined') {
 		j.id=i;p.parentNode.insertBefore(j,p);
 	}
 	})(window,document,"script","ld-ajs");
-	console.log("found the Ld!");
 	clearTimeout(find);
   	         } else {
-		 	console.log("fire findLd!");
 			find = setTimeout(findLd, 500);
 		 }
 	})();
 </script>
 
     <!-- start: #wrapper -->
-
-
-
-
-<!-- <script>ggv2id='40ea5be6';</script><script src="https://g2.gumgum.com/javascripts/ggv2.js"></script> -->
-
-
-
-<!-- <script>!function(){var a,b="40ea5be6",c="https://g2.gumgum.com/javascripts/ggv2.js",d=top,e="script",f=d.document,g=f.getElementsByTagName(e)[0],h=d.XMLHttpRequest||d.XDomainRequest,i=function(a){var b=f.createElement(e);b.src=a,b.async=!0,g.parentNode.insertBefore(b,g)},j=function(){d.clearTimeout(a)};return d.ggv2id=b,h?(h=new h,h.open("GET",c),h.onload=function(){j();try{(d.execScript||function(a){d.eval.call(d,a)})(h.responseText)}catch(a){}},a=d.setTimeout(function(){h.abort()},3e3),void h.send()):i(c)}();</script> -->
 
 <!--[if !IE]><!-->
 	<script type="text/javascript" src="{{asset "js/wow.min.js"}}"></script>
