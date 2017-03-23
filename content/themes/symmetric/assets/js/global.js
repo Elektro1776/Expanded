@@ -4,7 +4,7 @@
   /* Dom Loaded */
   $(document)
       .ready(function($) {
-        ///Insert Lockerdome 
+        ///Insert Lockerdome
         if($('div').hasClass('closedpage-content')){
 
         (function(){
@@ -12,15 +12,11 @@
           var textArray = $(textNodes).toArray();
           var textLength = textArray.length;
           var i = Math.ceil(textLength/2);
-  //        console.log(i);
          $(textArray[i]).after("<div id='ld-2048-8119'></div>");
-	         //////
-
-
-
        })();
-
      }
+     var currentURL = window.location.href;
+     window.history.pushState('state', 'null', currentURL);
         /*if ($('body').hasClass('post-template')) {
           (function() {
             var referer = "";
