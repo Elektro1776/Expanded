@@ -31,11 +31,11 @@ config = {
     database : {
       client : 'pg',
       connection : {
-        host : '130.211.157.153',
+        host : '130.211.215.155',
 	port:'5432',
         user : 'groupx',
         password : 'Austin1776#',
-        database : 'Expanded',
+        database : 'currentExpanded',
         charset : 'utf8'
       },
       debug : false
@@ -43,9 +43,9 @@ config = {
         storage: {
 active: 'gcloud',
 'gcloud': {
-    projectId: '1083293617233',
+    projectId: '348800233321',
     key: 'key.json', // if is in the ghost root folder just add the name of the file
-    bucket: 'expanded'
+    bucket: 'expanded-2017'
 }
 },
 
@@ -58,8 +58,8 @@ active: 'gcloud',
   development : {
     // The url to use when providing links to the site, E.g. in RSS and email.
     // Change this to your Ghost blog's published URL.
-    url : 'http://dev-2.groupxondemand.com',
-
+     url : 'http://expandedconsciousness.com/',
+ 
     // Example mail config
     // Visit http://support.ghost.org/mail for instructions
     // ```
@@ -67,8 +67,7 @@ active: 'gcloud',
     //      transport: 'SMTP',
     //      options: {
     //          service: 'Mailgun',
-    //          auth: {
-    //              user: '', // mailgun username
+    //          auth: {    //              user: '', // mailgun username
     //              pass: ''  // mailgun password
     //          }
     //      }
@@ -80,23 +79,23 @@ active: 'gcloud',
        database : {
       client : 'pg',
       connection : {
-        host : '104.197.87.9',
+        host : '130.211.215.155',
         port:'5432',
         user : 'groupx',
         password : 'Austin1776#',
-        database : 'Expanded',
+        database : 'currentExpanded',
         charset : 'utf8'
       },
       debug : false
     },
-    /*    storage: {
+               storage: {
 active: 'gcloud',
 'gcloud': {
-    projectId: '703090694969',
+    projectId: '348800233321',
     key: 'key.json', // if is in the ghost root folder just add the name of the file
-    bucket: 'hcr'
+    bucket: 'expanded-2017'
 }
-},*/
+} ,
     // #### Server
     // Can be host & port (default), or socket
     server : {

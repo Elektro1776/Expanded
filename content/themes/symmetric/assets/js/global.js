@@ -4,7 +4,7 @@
   /* Dom Loaded */
   $(document)
       .ready(function($) {
-        ///Insert Teads Ad
+        ///Insert Lockerdome 
         if($('div').hasClass('closedpage-content')){
 
         (function(){
@@ -13,8 +13,14 @@
           var textLength = textArray.length;
           var i = Math.ceil(textLength/2);
           console.log(i);
-         $(textArray[i]).after("<div id='insert_teads_ad'></div>");
-
+         $(textArray[i]).after("<div id='ld-2048-8119'></div>");
+	(function(w,d,s,i){w.ldAdInit=w.ldAdInit||[];w.ldAdInit.push({slot:8925021968153959,size:[0, 0],id:"ld-2048-8119"});
+	if(!d.getElementById(i)){
+		var j=d.createElement(s),p=d.getElementsByTagName(s)[0];
+		j.async=true;j.src="//cdn2.lockerdome.com/_js/ajs.js";
+		j.id=i;p.parentNode.insertBefore(j,p);
+	}
+	})(window,document,"script","ld-ajs");
          //////
 
 
